@@ -3,9 +3,9 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 
-
-const char* ssid = "WIFI_SSID";
-const char* password = "WIFI_PASS";
+#include <local.h>
+//const char* ssid = "WIFI_SSID";
+//const char* password = "WIFI_PASS";
 
 void setup() {
   Serial.begin(115200);
