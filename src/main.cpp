@@ -2,13 +2,14 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
-
+#include "Arduino.h"
 #include <local.h>
 //const char* ssid = "WIFI_SSID";
 //const char* password = "WIFI_PASS";
 
 
 void setup() {
+
   Serial.begin(115200);
   Serial.println("Booting");
   WiFi.mode(WIFI_STA);
@@ -18,6 +19,7 @@ void setup() {
     delay(5000);
     ESP.restart();
   }
+
 
   // Port defaults to 8266
   // ArduinoOTA.setPort(8266);
@@ -60,8 +62,18 @@ void setup() {
   Serial.println("Ready");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
+    // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);
+  // wait for a second
+  delay(1000);
+  // turn the LED off by making the voltage LOW
+  digitalWrite(LED_BUILTIN, LOW);
+   // wait for a second
+  delay(500);
   ArduinoOTA.handle();
+
 }
