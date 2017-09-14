@@ -8,6 +8,7 @@
 //const char* password = "WIFI_PASS";
 
 
+
 void setup() {
 
   Serial.begin(115200);
@@ -62,6 +63,7 @@ void setup() {
   Serial.println("Ready");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
